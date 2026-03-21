@@ -1,0 +1,326 @@
+/*! Rating Blinder – content.css
+    Hides ratings, scores, star widgets, and review aggregates.
+    All rules scoped under html:not(.rb-off) for popup toggle.
+    ────────────────────────────────────────────────────────────── */
+
+/* ── JS-managed class (for text-scanned elements) ──────────────── */
+html:not(.rb-off) .rb-hidden {
+    display: none !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   AMAZON  (all TLDs: .com, .co.uk, .de, .es, .fr, .it, .co.jp …)
+   ═══════════════════════════════════════════════════════════════════ */
+html:not(.rb-off) :is(
+    #acrPopover,
+    #acrCustomerReviewText,
+    #averageCustomerReviews,
+    #cm_cr_dp_d_rating_histogram,
+    .cr-widget-TitleRatingsHistogram,
+    .cr-lighthouse-widget,
+    .reviewCountTextLinkedHistogram,
+    [data-hook="rating-out-of-text"],
+    [data-hook="acr-average-stars-rating-text"],
+    .a-icon-star,
+    .a-icon-star-small,
+    .a-icon-star-medium,
+    i.a-icon[class*="a-star-"],
+    .a-meter,
+    .a-star-micro,
+    .a-star-mini,
+    .a-star-small,
+    .a-star-medium
+) { display: none !important; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   GOODREADS
+   ═══════════════════════════════════════════════════════════════════ */
+html:not(.rb-off) :is(
+    .RatingStatistics,
+    .BookPageMetadataSection__ratingStats,
+    .BookPageMetadataSection__rating,
+    .ReviewsSectionStatistics,
+    .RatingsHistogram,
+    .communityRating,
+    .RatingStars,
+    .staticStars,
+    .minirating,
+    .starsWrapper,
+    .FeaturedPerson__infoPair--rating,
+    .BookCard__rating,
+    .ShelfBookCard__rating,
+    [data-testid="ratingsCount"],
+    [data-testid="averageRating"],
+    .AverageRating
+) { display: none !important; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   FILMAFFINITY
+   ═══════════════════════════════════════════════════════════════════ */
+html:not(.rb-off) :is(
+    #rat-avg-container,
+    #rat-graph,
+    #rating-movie-main,
+    .avgrat-box,
+    .avg-rating,
+    .avg,
+    .rat-avg,
+    .movie-rat-box,
+    .fa-shadow.rat-avg,
+    .mc-info-container .rat-avg,
+    .points,
+    .rat-count,
+    .rat-imdb,
+    .user-ratings-container
+) { display: none !important; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   LIBRARYTHING
+   ═══════════════════════════════════════════════════════════════════ */
+html:not(.rb-off) :is(
+    .rating,
+    .stars,
+    .book_rating,
+    #book_rating,
+    .work-rating,
+    .ratingGraph,
+    .membersrating,
+    .starbar,
+    .ratingsbreakdown,
+    .gchart,
+    .lt_scoreboard,
+    [id^="rate-"],
+    [class*="rating-style-"]
+) { display: none !important; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   IMDB
+   ═══════════════════════════════════════════════════════════════════ */
+html:not(.rb-off) :is(
+    [data-testid="hero-rating-bar__aggregate-rating"],
+    [data-testid="hero-rating-bar__aggregate-rating__score"],
+    [data-testid="rating-button"],
+    .ipc-rating-star,
+    .ipc-rating-star--base,
+    .rating-bar,
+    .rating-bar__base-button,
+    .metacritic-score-box,
+    [class*="RatingBar"],
+    [class*="AggregateRatingButton"],
+    [data-testid="hero-rating-bar__user-rating"],
+    [data-testid="toptier-rating"],
+    .plot-rating-widget
+) { display: none !important; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   ROTTEN TOMATOES
+   ═══════════════════════════════════════════════════════════════════ */
+html:not(.rb-off) :is(
+    score-board,
+    score-icon-critic,
+    score-icon-audience,
+    score-icon-critic-deprecated,
+    score-icon-audience-deprecated,
+    [data-qa="score-panel"],
+    [slot="criticsScore"],
+    [slot="audienceScore"],
+    .mop-ratings-wrap__half,
+    .audience-score,
+    .critic-score,
+    .tMeterScore,
+    .mop-ratings-wrap__percentage,
+    [class*="ScoreCard"],
+    [class*="TomatoRating"]
+) { display: none !important; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   METACRITIC
+   ═══════════════════════════════════════════════════════════════════ */
+html:not(.rb-off) :is(
+    .metascore_w,
+    .c-siteReviewScore,
+    .c-ScoreCard,
+    .c-productScoreInfo,
+    .metascore_anchor,
+    [class*="metascore"],
+    [class*="c-siteReviewScore"],
+    [class*="c-ScoreCard"]
+) { display: none !important; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   LETTERBOXD
+   ═══════════════════════════════════════════════════════════════════ */
+html:not(.rb-off) :is(
+    .display-rating,
+    .average-rating,
+    .ratings-histogram,
+    .rating-histogram,
+    .ratings-histogram-chart,
+    .global-rating,
+    .rating-green,
+    [class*="rateit"]
+) { display: none !important; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   TMDB (The Movie Database)
+   ═══════════════════════════════════════════════════════════════════ */
+html:not(.rb-off) :is(
+    .user_score_chart,
+    .consensus,
+    .percent,
+    [class*="chart"]
+) { /* not safe globally – only useful on TMDB */ }
+
+/* ═══════════════════════════════════════════════════════════════════
+   GOOGLE SEARCH (knowledge panels, shopping results)
+   ═══════════════════════════════════════════════════════════════════ */
+html:not(.rb-off) :is(
+    [data-attrid*="rating"],
+    [data-attrid*="star"],
+    [data-attrid*="reviews"],
+    [data-attrid*="review"],
+    .Aq14fc,
+    .review-snippet,
+    .ChPIuf,
+    .Y0A0hc,
+    .KsR1A,
+    .fG8Fp,
+    g-review-stars,
+    .sSzFAb .YQLHM:first-child
+) { display: none !important; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   STEAM
+   ═══════════════════════════════════════════════════════════════════ */
+html:not(.rb-off) :is(
+    .game_review_summary,
+    .user_reviews_summary_bar,
+    .review_histogram,
+    .game_rating_icon,
+    .user_reviews
+) { display: none !important; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   YELP                                                              
+   ═══════════════════════════════════════════════════════════════════ */
+html:not(.rb-off) :is(
+    [class*="star--large"],
+    [class*="i-stars"],
+    [aria-label*="star rating" i],
+    .rating-large,
+    .rating-very-large,
+    .biz-rating
+) { display: none !important; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   TRIPADVISOR
+   ═══════════════════════════════════════════════════════════════════ */
+html:not(.rb-off) :is(
+    [class*="bubble_rating"],
+    .ui_bubble_rating,
+    [data-test-target="review-rating"],
+    .overallRating,
+    .ratingOverall,
+    .prw_rup
+) { display: none !important; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   GENERIC / CROSS-SITE RULES
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── Schema.org microdata ──────────────────────────────────────── */
+html:not(.rb-off) :is(
+    [itemprop="aggregateRating"],
+    [itemprop="ratingValue"],
+    [itemprop="ratingCount"],
+    [itemprop="reviewRating"],
+    [itemprop="bestRating"],
+    [itemprop="worstRating"],
+    [itemtype*="schema.org/Rating"],
+    [itemtype*="schema.org/AggregateRating"]
+) { display: none !important; }
+
+/* ── Aria labels mentioning ratings ────────────────────────────── */
+html:not(.rb-off) :is(
+    [role="img"][aria-label*="rating" i],
+    [role="img"][aria-label*="stars" i],
+    [role="img"][aria-label*="out of 5" i],
+    [role="img"][aria-label*="out of 10" i],
+    [aria-label*="star rating" i],
+    [aria-label*="out of 5 stars" i],
+    [aria-label*="average rating" i]
+) { display: none !important; }
+
+/* ── Class-name patterns (compound, low false-positive risk) ──── */
+html:not(.rb-off) :is(
+    /* star + rating combinations */
+    [class*="star-rating" i],
+    [class*="starRating" i],
+    [class*="star_rating" i],
+    [class*="StarRating" i],
+    [class*="rating-star" i],
+    [class*="ratingStars" i],
+    [class*="rating_stars" i],
+    /* average / aggregate rating */
+    [class*="avg-rating" i],
+    [class*="avgRating" i],
+    [class*="average-rating" i],
+    [class*="averageRating" i],
+    [class*="aggregate-rating" i],
+    [class*="aggregateRating" i],
+    /* user / review rating */
+    [class*="user-rating" i],
+    [class*="userRating" i],
+    [class*="review-score" i],
+    [class*="reviewScore" i],
+    [class*="review-rating" i],
+    [class*="reviewRating" i],
+    /* rating display / value / badge */
+    [class*="rating-display" i],
+    [class*="ratingDisplay" i],
+    [class*="rating-value" i],
+    [class*="ratingValue" i],
+    [class*="rating-badge" i],
+    [class*="ratingBadge" i],
+    [class*="rating-number" i],
+    [class*="ratingNumber" i],
+    [class*="rating-count" i],
+    [class*="ratingCount" i],
+    [class*="rating-summary" i],
+    [class*="ratingSummary" i],
+    [class*="rating-widget" i],
+    [class*="ratingWidget" i],
+    [class*="rating-bar" i],
+    [class*="ratingBar" i],
+    /* score cards */
+    [class*="score-card" i],
+    [class*="scoreCard" i],
+    /* thumbs / like percentage */
+    [class*="thumb-rating" i],
+    [class*="thumbRating" i]
+) { display: none !important; }
+
+/* ── ID patterns ───────────────────────────────────────────────── */
+html:not(.rb-off) :is(
+    [id*="star-rating" i],
+    [id*="starRating" i],
+    [id*="avg-rating" i],
+    [id*="avgRating" i],
+    [id*="average-rating" i],
+    [id*="averageRating" i],
+    [id*="user-rating" i],
+    [id*="userRating" i],
+    [id*="review-score" i],
+    [id*="reviewScore" i],
+    [id*="aggregate-rating" i]
+) { display: none !important; }
+
+/* ── Data attributes ───────────────────────────────────────────── */
+html:not(.rb-off) :is(
+    [data-rating],
+    [data-score],
+    [data-star-rating],
+    [data-avg-rating],
+    [data-user-rating],
+    [data-review-rating]
+) { display: none !important; }
