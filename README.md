@@ -43,17 +43,21 @@ RatingBlinder/
 │   ├── popup.html
 │   ├── popup.js
 │   └── icons/
-│       └── icon.svg
+│       ├── icon.svg
+│       ├── icon16.png
+│       ├── icon48.png
+│       └── icon128.png
 └── README.md
 ```
 
-The two folders are self-contained extensions that share the same CSS and HTML. The only differences are:
+Each folder is a self-contained extension ready to load directly in the browser. The only differences are:
 
 | | Firefox | Edge / Chrome |
 |---|---|---|
 | Manifest version | 2 | 3 |
 | Toolbar entry | `browser_action` | `action` |
 | Extension API | `browser.*` (Promise-based) | `chrome.*` (callback-based) |
+| Icons | SVG | PNG (Chromium requires raster icons) |
 | Browser-specific settings | `gecko.id` | — |
 
 ## How to Load
@@ -73,7 +77,7 @@ The two folders are self-contained extensions that share the same CSS and HTML. 
 1. Open Edge and navigate to `edge://extensions`.
 2. Enable **Developer mode** (toggle in the bottom-left corner).
 3. Click **"Load unpacked"**.
-4. Select the **`edge/`** folder (the folder itself, not a file inside it).
-5. The ⭐ icon appears in the toolbar — click it to toggle ratings on/off.
+4. Select the **`edge/`** folder.
+5. Click the puzzle-piece icon 🧩 in the toolbar and **pin** Rating Blinder so it stays visible.
 
 > **Tip:** The Edge version uses Manifest V3 and the standard `chrome.*` API, so it also works on **Google Chrome** (`chrome://extensions`) and other Chromium-based browsers.
